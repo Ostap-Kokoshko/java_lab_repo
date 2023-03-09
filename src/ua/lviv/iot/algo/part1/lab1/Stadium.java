@@ -52,6 +52,10 @@ public class Stadium {
     public void changeAwayTeam(String teamName) {
         this.awayTeam = teamName;
     }
+    @Override
+    public String toString() {
+        return "Stadium [" + name + "], capacity = " + capacity + ", current Attendance = " + currentAttendance + ", home Team - " + homeTeam + ", away Team - " + awayTeam;
+    }
 
     public static void main(String[] args) {
         Stadium[] stadiums = new Stadium[4];
@@ -60,22 +64,22 @@ public class Stadium {
         stadiums[0] = new Stadium();
 
         //Create object by @AllArgsConstructor from lombok
-        stadiums[1] = new Stadium(" Arena Lviv", 35000, 100, " Shahtar", " Carpatian");
+        stadiums[1] = new Stadium("Arena Lviv", 35000, 100, "Shahtar", "Carpatian");
 
         //Create 2 objects by method getInstance
         stadiums[2] = getInstance();
-        stadiums[2].setName(" Olympic");
+        stadiums[2].setName("Olympic");
         stadiums[2].setCapacity(70000);
         stadiums[2].setCurrentAttendance(10000);
-        stadiums[2].setHomeTeam(" Shahtar");
-        stadiums[2].setAwayTeam(" Henk");
+        stadiums[2].setHomeTeam("Shahtar");
+        stadiums[2].setAwayTeam("Henk");
 
         stadiums[3] = getInstance();
-        stadiums[3].setName(" Ukraine");
+        stadiums[3].setName("Ukraine");
         stadiums[3].setCapacity(28000);
         stadiums[3].setCurrentAttendance(3000);
-        stadiums[3].setHomeTeam(" Dynamo");
-        stadiums[3].setAwayTeam(" FK Zahid");
+        stadiums[3].setHomeTeam("Dynamo");
+        stadiums[3].setAwayTeam("FK Zahid");
 
         //Create a loop with a precondition to output all stadiums data
         for (int index = 0; index < stadiums.length; index++) {
