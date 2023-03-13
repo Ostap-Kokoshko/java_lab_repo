@@ -52,11 +52,6 @@ public class Stadium {
     public void changeAwayTeam(String teamName) {
         this.awayTeam = teamName;
     }
-    
-    @Override
-    public String toString() {
-        return "Stadium [" + name + "], capacity = " + capacity + ", current Attendance = " + currentAttendance + ", home Team - " + homeTeam + ", away Team - " + awayTeam;
-    }
 
     public static void main(String[] args) {
         Stadium[] stadiums = new Stadium[4];
