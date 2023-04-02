@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Stadium extends AbstractStadium{
-    final static int ONE_HUNDRED_PEOPLE_TO_EXPEL = 100;
+    final static int PEOPLE_TO_EXPEL = 100;
     private String homeTeam;
     private String awayTeam;
     public Stadium(String name, int capacity, int currentAttendance, String homeTeam, String awayTeam) {
@@ -30,8 +30,8 @@ public class Stadium extends AbstractStadium{
     }
 
     public void decreaseAttendance() {
-        if (currentAttendance >= ONE_HUNDRED_PEOPLE_TO_EXPEL) {
-            currentAttendance -= ONE_HUNDRED_PEOPLE_TO_EXPEL;
+        if (currentAttendance >= PEOPLE_TO_EXPEL) {
+            currentAttendance -= PEOPLE_TO_EXPEL;
         } else {
             System.out.println("There is no attendees left to remove!");
         }
