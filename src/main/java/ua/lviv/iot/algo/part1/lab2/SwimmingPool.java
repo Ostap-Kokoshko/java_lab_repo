@@ -15,7 +15,8 @@ public class SwimmingPool extends AbstractStadium{
     private double volume;
     private int maxNumberOfVisitors;
 
-    public SwimmingPool(String name, int capacity, int currentAttendance, int numberOfBathrooms, double volume, int maxNumberOfVisitors) {
+    public SwimmingPool(String name, int capacity, int currentAttendance, int numberOfBathrooms,
+                        double volume, int maxNumberOfVisitors) {
         super(name, capacity, currentAttendance);
         this.numberOfBathrooms = numberOfBathrooms;
         this.volume = volume;
