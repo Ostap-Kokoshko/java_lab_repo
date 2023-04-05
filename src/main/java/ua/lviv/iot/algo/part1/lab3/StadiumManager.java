@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lombok.Generated;
 import lombok.Getter;
 
 @Getter
@@ -25,6 +26,7 @@ public class StadiumManager {
                 filter(stadium -> stadium.getCurrentAttendance() > currentAttendance).
                 collect(Collectors.toList());
     }
+    @Generated
     public static void main(String[] args) {
         StadiumManager stadiumManager = new StadiumManager();
         stadiumManager.addStadium(new Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian"));

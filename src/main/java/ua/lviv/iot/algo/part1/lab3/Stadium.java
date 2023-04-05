@@ -1,13 +1,12 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.List;
 
-@Setter
+
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
@@ -26,9 +25,11 @@ public class Stadium extends AbstractStadium {
         var newAttendance = currentAttendance + count;
         if (newAttendance > capacity) {
             System.out.println("The stadium is full!");
-            return;
         }
-        currentAttendance = newAttendance;
+        else{
+            System.out.println("I am addind attendance");
+            currentAttendance = newAttendance;
+        }
     }
 
     public void decreaseAttendance() {
