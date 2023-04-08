@@ -6,8 +6,10 @@ import java.util.stream.Collectors;
 
 import lombok.Generated;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class StadiumManager {
     private final List<AbstractStadium> stadiums = new LinkedList<>();
 

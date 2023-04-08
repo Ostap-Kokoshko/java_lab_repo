@@ -13,11 +13,12 @@ public class SkiResortTest {
 
     @Test
     public void testGetSupportedSports() {
-        assertEquals(List.of("Ski racing", "Biathlon", "FreeStyle", "Ski dueling", "Ski jumping"), stadium.getSupportedSports());
+        assertEquals(List.of("Ski racing", "Biathlon", "FreeStyle", "Ski dueling", "Ski jumping"),
+                stadium.getSupportedSports());
     }
 
     @Test
-    public void testDescentLength(){
+    public void testDescentLength() {
         stadium.setDescentLength(1000);
         assertEquals(stadium2.toString(), stadium.toString());
     }
