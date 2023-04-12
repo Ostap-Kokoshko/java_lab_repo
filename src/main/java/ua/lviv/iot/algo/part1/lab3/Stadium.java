@@ -1,20 +1,25 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 import java.util.List;
 
-@Setter
+
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class Stadium extends AbstractStadium{
+public class Stadium extends AbstractStadium {
     final static int PEOPLE_TO_EXPEL = 100;
     private String homeTeam;
     private String awayTeam;
-    public Stadium(String name, int capacity, int currentAttendance, String homeTeam, String awayTeam) {
+
+    public Stadium(final String name,
+                   final int capacity,
+                   final int currentAttendance,
+                   final String homeTeam,
+                   final String awayTeam) {
         super(name, capacity, currentAttendance);
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
@@ -24,9 +29,10 @@ public class Stadium extends AbstractStadium{
         var newAttendance = currentAttendance + count;
         if (newAttendance > capacity) {
             System.out.println("The stadium is full!");
-            return;
+        } else {
+            System.out.println("I am addind attendance");
+            currentAttendance = newAttendance;
         }
-        currentAttendance = newAttendance;
     }
 
     public void decreaseAttendance() {
@@ -38,7 +44,7 @@ public class Stadium extends AbstractStadium{
     }
 
     @Override
-    public List<String> getSupportedSports() {
+    public final List<String> getSupportedSports() {
         return List.of("Football", "Basketball", "Tennis");
     }
 }

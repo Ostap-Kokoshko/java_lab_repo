@@ -1,21 +1,25 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 import java.util.List;
 
-@Setter
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class SwimmingPool extends AbstractStadium{
+public class SwimmingPool extends AbstractStadium {
     private int numberOfBathrooms;
     private double volume;
     private int maxNumberOfVisitors;
 
-    public SwimmingPool(String name, int capacity, int currentAttendance, int numberOfBathrooms, double volume, int maxNumberOfVisitors) {
+    public SwimmingPool(final String name,
+                        final int capacity,
+                        final int currentAttendance,
+                        final int numberOfBathrooms,
+                        final double volume,
+                        final int maxNumberOfVisitors) {
         super(name, capacity, currentAttendance);
         this.numberOfBathrooms = numberOfBathrooms;
         this.volume = volume;
@@ -23,7 +27,7 @@ public class SwimmingPool extends AbstractStadium{
     }
 
     @Override
-    public List<String> getSupportedSports() {
+    public final List<String> getSupportedSports() {
         return List.of("Swimming", "Water Polo");
     }
 }
