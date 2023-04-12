@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.List;
 
 public class SkiResortTest {
-    private final SkiResort stadium = new SkiResort("Bukovel", 9000, 300, 500.5, 30);
+    private final SkiResort stadium = new SkiResort("Bukovel", 9000, 300, 1000, 30);
     private final SkiResort stadium2 = new SkiResort("Bukovel", 9000, 300, 1000, 30);
     private final SkiResort stadium3 = new SkiResort();
 
@@ -19,7 +19,6 @@ public class SkiResortTest {
 
     @Test
     public void testDescentLength() {
-        stadium.setDescentLength(1000);
         assertEquals(stadium2.toString(), stadium.toString());
     }
 

@@ -18,7 +18,6 @@ public class SkatingRinkTest {
 
     @Test
     public void testHasNaturalIce(){
-        stadium.setHasNaturalIce(false);
         assertEquals(stadium2.toString(), stadium.toString());
     }
 

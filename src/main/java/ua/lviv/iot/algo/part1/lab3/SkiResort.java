@@ -1,13 +1,11 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.List;
 
-@Setter
 @Getter
 @NoArgsConstructor
 @ToString(callSuper = true)

@@ -18,7 +18,6 @@ public class SwimmingPoolTest {
 
     @Test
     public void testNumberOfBathrooms(){
-        stadium.setNumberOfBathrooms(10);
         assertEquals(stadium2.toString(), stadium.toString());
     }
 
