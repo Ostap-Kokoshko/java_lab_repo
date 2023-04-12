@@ -15,7 +15,11 @@ public class Stadium extends AbstractStadium {
     private String homeTeam;
     private String awayTeam;
 
-    public Stadium(String name, int capacity, int currentAttendance, String homeTeam, String awayTeam) {
+    public Stadium(final String name,
+                   final int capacity,
+                   final int currentAttendance,
+                   final String homeTeam,
+                   final String awayTeam) {
         super(name, capacity, currentAttendance);
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
@@ -25,8 +29,7 @@ public class Stadium extends AbstractStadium {
         var newAttendance = currentAttendance + count;
         if (newAttendance > capacity) {
             System.out.println("The stadium is full!");
-        }
-        else{
+        } else {
             System.out.println("I am addind attendance");
             currentAttendance = newAttendance;
         }
@@ -41,7 +44,7 @@ public class Stadium extends AbstractStadium {
     }
 
     @Override
-    public List<String> getSupportedSports() {
+    public final List<String> getSupportedSports() {
         return List.of("Football", "Basketball", "Tennis");
     }
 }

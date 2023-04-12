@@ -35,6 +35,4 @@ public class StadiumTest {
         stadium.decreaseAttendance();
         assertEquals(1, stadium.getCurrentAttendance());
     }
-
-
 }

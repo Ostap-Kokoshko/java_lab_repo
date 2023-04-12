@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public abstract class AbstractStadium {
-    protected String name;
+    private String name;
     protected int capacity;
     protected int currentAttendance;
 
