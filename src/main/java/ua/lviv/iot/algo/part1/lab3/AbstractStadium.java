@@ -14,9 +14,18 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public abstract class AbstractStadium {
+    private final static String HEADERS = "name,capacity,currentAttendance";
     private String name;
     protected int capacity;
     protected int currentAttendance;
 
     public abstract List<String> getSupportedSports();
+
+    public String getHeaders() {
+        return HEADERS;
+    }
+
+    public String toCSV() {
+        return name + "," + capacity + "," + currentAttendance;
+    }
 }

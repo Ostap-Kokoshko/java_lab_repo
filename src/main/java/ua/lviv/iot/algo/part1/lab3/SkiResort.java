@@ -27,4 +27,14 @@ public class SkiResort extends AbstractStadium {
     public final List<String> getSupportedSports() {
         return List.of("Ski racing", "Biathlon", "FreeStyle", "Ski dueling", "Ski jumping");
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + "," + "descentLength" + "," + "slopeSteepnessInDegrees";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + descentLength + "," + slopeSteepnessInDegrees;
+    }
 }

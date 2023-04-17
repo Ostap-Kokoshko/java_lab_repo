@@ -27,4 +27,14 @@ public class SkatingRink extends AbstractStadium {
     public final List<String> getSupportedSports() {
         return List.of("Hockey", "Figure skating");
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + "," + "hasNaturalIce" + "," + "areaInSquareMeters";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + hasNaturalIce + "," + areaInSquareMeters;
+    }
 }

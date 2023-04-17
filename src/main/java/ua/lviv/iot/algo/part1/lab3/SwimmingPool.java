@@ -30,4 +30,14 @@ public class SwimmingPool extends AbstractStadium {
     public final List<String> getSupportedSports() {
         return List.of("Swimming", "Water Polo");
     }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + "," + "numberOfBathrooms" + "," + "volume" + "," + "maxNumberOfVisitors";
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfBathrooms + "," + volume + "," + maxNumberOfVisitors;
+    }
 }

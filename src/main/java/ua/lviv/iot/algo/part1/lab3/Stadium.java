@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 
@@ -11,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Stadium extends AbstractStadium {
+    private final static String HEADERS = ",homeTeam,awayTeam";
     final static int PEOPLE_TO_EXPEL = 100;
     private String homeTeam;
     private String awayTeam;
@@ -46,5 +48,15 @@ public class Stadium extends AbstractStadium {
     @Override
     public final List<String> getSupportedSports() {
         return List.of("Football", "Basketball", "Tennis");
+    }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + homeTeam + "," + awayTeam;
     }
 }
