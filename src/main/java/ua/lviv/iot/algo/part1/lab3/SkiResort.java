@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class SkiResort extends AbstractStadium {
+    private final static String HEADERS = ",descentLength,slopeSteepnessInDegrees";
     private double descentLength;
     private int slopeSteepnessInDegrees;
 
@@ -30,7 +31,7 @@ public class SkiResort extends AbstractStadium {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + "," + "descentLength" + "," + "slopeSteepnessInDegrees";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override

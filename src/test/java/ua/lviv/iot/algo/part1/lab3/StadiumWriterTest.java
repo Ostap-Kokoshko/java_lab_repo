@@ -15,16 +15,15 @@ public class StadiumWriterTest {
     private static final String RESULT_FILENAME = "result.csv";
     private static final String EXPECTED_FILENAME = "expected.csv";
     private List<AbstractStadium> stadiums;
-    public File resultFileName;
-    public File expectedFileName;
+    private File resultFile;
+    private final File expectedFile = new File(EXPECTED_FILENAME);
     @BeforeEach
     public void setUp() throws IOException {
         writer = new StadiumWriter();
 
         Files.deleteIfExists(Path.of(RESULT_FILENAME));
 
-        expectedFileName = new File(EXPECTED_FILENAME);
-        resultFileName = new File(RESULT_FILENAME);
+        resultFile = new File(RESULT_FILENAME);
 
         stadiums = new LinkedList<>();
         stadiums.add(new Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian"));
@@ -52,8 +51,8 @@ public class StadiumWriterTest {
     @Test
     public void testWriteListOfStadiums() throws IOException {
         writer.writeToFile(stadiums);
-        Path expected = resultFileName.toPath();
-        Path actual = expectedFileName.toPath();
+        Path expected = resultFile.toPath();
+        Path actual = expectedFile.toPath();
         Assertions.assertEquals(-1L, Files.mismatch(expected, actual));
     }
 
@@ -61,7 +60,7 @@ public class StadiumWriterTest {
     public void testFileOverride() throws IOException {
         //create result.csv
         //write some content there
-        FileWriter LukaSayHi = new FileWriter(resultFileName);
+        FileWriter LukaSayHi = new FileWriter(resultFile);
         LukaSayHi.write("Hi");
         LukaSayHi.close();
         testWriteListOfStadiums();

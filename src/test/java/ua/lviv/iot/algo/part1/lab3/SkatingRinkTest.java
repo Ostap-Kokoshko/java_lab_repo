@@ -25,4 +25,16 @@ public class SkatingRinkTest {
     public void testAreaInSquareMeters(){
         assertEquals(500, stadium.getAreaInSquareMeters());
     }
+
+    @Test
+    public void testHeaders() {
+        SkatingRink stadiium = new SkatingRink("Ternopil", 10000, 5000, true, 400);
+        assertEquals("name,capacity,currentAttendance,hasNaturalIce,areaInSquareMeters", stadiium.getHeaders());
+    }
+
+    @Test
+    public void testToCsv() {
+        SkatingRink stadiium = new SkatingRink("Ternopil", 10000, 5000, true, 400);
+        assertEquals("Ternopil,10000,5000,true,400", stadiium.toCSV());
+    }
 }

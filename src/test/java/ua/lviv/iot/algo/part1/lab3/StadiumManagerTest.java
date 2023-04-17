@@ -15,7 +15,7 @@ public class StadiumManagerTest {
     StadiumManager stadiumManager = new StadiumManager();
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         stadiumManager.addStadium(new Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian"));
         stadiumManager.addStadium(new Stadium("Olymp", 40000, 11000, "Ukraine", "Spain"));
         stadiumManager.addStadium(new SwimmingPool("SKA", 44000, 1000, 10, 3000, 2000));
@@ -25,6 +25,7 @@ public class StadiumManagerTest {
         stadiumManager.addStadium(new SkatingRink("Ternopil", 10000, 5000, true, 400));
         stadiumManager.addStadium(new SkatingRink("Odesa", 12000, 3000, false, 500));
     }
+
     @Test
     @DisplayName("Add Stadium method should work")
     public void testAddStadium() {

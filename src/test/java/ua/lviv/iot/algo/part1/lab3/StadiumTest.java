@@ -35,4 +35,16 @@ public class StadiumTest {
         stadium.decreaseAttendance();
         assertEquals(1, stadium.getCurrentAttendance());
     }
+
+    @Test
+    public void testHeaders() {
+        Stadium stadiium = new Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian");
+        assertEquals("name,capacity,currentAttendance,homeTeam,awayTeam", stadiium.getHeaders());
+    }
+
+    @Test
+    public void testToCsv() {
+        Stadium stadiium = new Stadium("Arena Lviv", 30000, 13000, "Shahtar", "Carpatian");
+        assertEquals("Arena Lviv,30000,13000,Shahtar,Carpatian", stadiium.toCSV());
+    }
 }

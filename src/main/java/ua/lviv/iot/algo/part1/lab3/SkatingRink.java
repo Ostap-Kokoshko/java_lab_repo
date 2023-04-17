@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class SkatingRink extends AbstractStadium {
+    private final static String HEADERS = ",hasNaturalIce,areaInSquareMeters";
     private boolean hasNaturalIce;
     private int areaInSquareMeters;
 
@@ -30,7 +31,7 @@ public class SkatingRink extends AbstractStadium {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + "," + "hasNaturalIce" + "," + "areaInSquareMeters";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override

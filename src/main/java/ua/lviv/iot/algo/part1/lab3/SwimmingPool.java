@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class SwimmingPool extends AbstractStadium {
+    private final static String HEADERS = ",numberOfBathrooms,volume,maxNumberOfVisitors";
     private int numberOfBathrooms;
     private double volume;
     private int maxNumberOfVisitors;
@@ -33,7 +34,7 @@ public class SwimmingPool extends AbstractStadium {
 
     @Override
     public String getHeaders() {
-        return super.getHeaders() + "," + "numberOfBathrooms" + "," + "volume" + "," + "maxNumberOfVisitors";
+        return super.getHeaders() + HEADERS;
     }
 
     @Override

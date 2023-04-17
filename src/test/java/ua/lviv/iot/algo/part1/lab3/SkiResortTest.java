@@ -26,5 +26,17 @@ public class SkiResortTest {
     public void testSlopeSteepnessInDegrees() {
         assertEquals(30, stadium.getSlopeSteepnessInDegrees(), 0.5);
     }
+
+    @Test
+    public void testHeaders() {
+        SkiResort stadiium = new SkiResort("Bukovel", 9000, 300, 500.5, 30);
+        assertEquals("name,capacity,currentAttendance,descentLength,slopeSteepnessInDegrees", stadiium.getHeaders());
+    }
+
+    @Test
+    public void testToCsv() {
+        SkiResort stadiium = new SkiResort("Bukovel", 9000, 300, 500.5, 30);
+        assertEquals("Bukovel,9000,300,500.5,30", stadiium.toCSV());
+    }
 }
 
