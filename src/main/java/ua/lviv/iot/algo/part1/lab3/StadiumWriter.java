@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StadiumWriter {
-    String csvFileName = "result.csv";
+    private String csvFileName = "result.csv";
 
     // When it`s already sorted list
     public String writeToFile(final List<AbstractStadium> stadiums) {

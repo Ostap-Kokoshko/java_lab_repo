@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -43,26 +46,23 @@ public class StadiumWriterTest {
 
     @Test
     public void testEmptyWrite() {
-        File file = new File(RESULT_FILENAME);
         writer.writeToFile(null);
-        Assertions.assertFalse(file.exists());
+        Assertions.assertFalse(resultFile.exists());
     }
 
     @Test
     public void testWriteListOfStadiums() throws IOException {
         writer.writeToFile(stadiums);
-        Path expected = resultFile.toPath();
-        Path actual = expectedFile.toPath();
+        Path actual = resultFile.toPath();
+        Path expected = expectedFile.toPath();
         Assertions.assertEquals(-1L, Files.mismatch(expected, actual));
     }
 
     @Test
     public void testFileOverride() throws IOException {
-        //create result.csv
-        //write some content there
-        FileWriter LukaSayHi = new FileWriter(resultFile);
-        LukaSayHi.write("Hi");
-        LukaSayHi.close();
+        FileWriter fileWriter = new FileWriter(resultFile);
+        fileWriter.write("Hi");
+        fileWriter.close();
         testWriteListOfStadiums();
     }
 }
