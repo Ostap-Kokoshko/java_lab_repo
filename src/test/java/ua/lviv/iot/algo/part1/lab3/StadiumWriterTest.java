@@ -20,12 +20,12 @@ public class StadiumWriterTest {
     private List<AbstractStadium> stadiums;
     private File resultFile;
     private final File expectedFile = new File(EXPECTED_FILENAME);
+
     @BeforeEach
     public void setUp() throws IOException {
         writer = new StadiumWriter();
 
         Files.deleteIfExists(Path.of(RESULT_FILENAME));
-
         resultFile = new File(RESULT_FILENAME);
 
         stadiums = new LinkedList<>();
@@ -40,19 +40,26 @@ public class StadiumWriterTest {
     }
 
     @AfterEach
-    public void tearDown() throws IOException{
+    public void tearDown() throws IOException {
         Files.deleteIfExists(Path.of(RESULT_FILENAME));
     }
 
     @Test
     public void testEmptyWrite() {
-        writer.writeToFile(null);
+        writer.writeToFile(null, RESULT_FILENAME);
+        Assertions.assertFalse(resultFile.exists());
+    }
+
+    @Test
+    public void testWriteEmptyList() {
+        List<AbstractStadium> nullStadium = new LinkedList<>();
+        writer.writeToFile(nullStadium, RESULT_FILENAME);
         Assertions.assertFalse(resultFile.exists());
     }
 
     @Test
     public void testWriteListOfStadiums() throws IOException {
-        writer.writeToFile(stadiums);
+        writer.writeToFile(stadiums, RESULT_FILENAME);
         Path actual = resultFile.toPath();
         Path expected = expectedFile.toPath();
         Assertions.assertEquals(-1L, Files.mismatch(expected, actual));
