@@ -5,13 +5,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import lombok.Generated;
-import lombok.Getter;
+import ua.lviv.iot.algo.part1.lab3.model.*;
 
-@Getter
 public class StadiumManager {
-    private final List<AbstractStadium> stadiums = new LinkedList<>();
+    public final List<AbstractStadium> stadiums = new LinkedList<>();
     private static final String csvFileName = "result.csv";
-    private static final String sortedCsvFileName = "sortedresult.csv";
 
     public void addStadium(final AbstractStadium stadium) {
         this.stadiums.add(stadium);
@@ -44,7 +42,6 @@ public class StadiumManager {
         stadiumManager.add(new SkatingRink("Odesa", 12000, 3000, false, 500));
 
         StadiumWriter writer = new StadiumWriter();
-        writer.writeToFile(stadiumManager, csvFileName);
-        writer.sortedStadium(stadiumManager, sortedCsvFileName);
+        writer.writeSortedStadium(stadiumManager, csvFileName);
     }
 }

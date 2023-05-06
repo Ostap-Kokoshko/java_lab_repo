@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab3.model.*;
 
 import java.util.LinkedList;
 import java.util.List;

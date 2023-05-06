@@ -1,9 +1,10 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.Generated;
+import ua.lviv.iot.algo.part1.lab3.model.AbstractStadium;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Collections;
@@ -13,7 +14,7 @@ public class StadiumWriter {
         if (stadiums == null || stadiums.isEmpty()) {
             return;
         }
-        try (FileWriter writer = new FileWriter(fileForList)) {
+        try (FileWriter writer = new FileWriter(fileForList, StandardCharsets.UTF_8)) {
             AbstractStadium stadiumType = stadiums.get(0);
             writer.write(stadiums.get(0).getHeaders());
             writer.write("\n");
@@ -29,11 +30,9 @@ public class StadiumWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    @Generated
-    public void sortedStadium(List<AbstractStadium> stadiums, String fileForSortedList) {
+    public void writeSortedStadium(List<AbstractStadium> stadiums, String fileForSortedList) {
         Collections.sort(stadiums, Comparator.comparing(stadium -> stadium.getClass().getName()));
         writeToFile(stadiums, fileForSortedList);
     }

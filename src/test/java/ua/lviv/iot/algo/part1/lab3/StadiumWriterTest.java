@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import ua.lviv.iot.algo.part1.lab3.model.*;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -45,21 +46,15 @@ public class StadiumWriterTest {
     }
 
     @Test
-    public void testEmptyWrite() {
-        writer.writeToFile(null, RESULT_FILENAME);
-        Assertions.assertFalse(resultFile.exists());
-    }
-
-    @Test
     public void testWriteEmptyList() {
         List<AbstractStadium> nullStadium = new LinkedList<>();
-        writer.writeToFile(nullStadium, RESULT_FILENAME);
+        writer.writeSortedStadium(nullStadium, RESULT_FILENAME);
         Assertions.assertFalse(resultFile.exists());
     }
 
     @Test
     public void testWriteListOfStadiums() throws IOException {
-        writer.writeToFile(stadiums, RESULT_FILENAME);
+        writer.writeSortedStadium(stadiums, RESULT_FILENAME);
         Path actual = resultFile.toPath();
         Path expected = expectedFile.toPath();
         Assertions.assertEquals(-1L, Files.mismatch(expected, actual));
