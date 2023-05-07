@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab3.model;
 
 import static org.junit.Assert.assertEquals;
 
@@ -31,4 +31,15 @@ public class SwimmingPoolTest {
         assertEquals(2000, stadium.getMaxNumberOfVisitors());
     }
 
+    @Test
+    public void testHeaders() {
+        SwimmingPool stadiium = new SwimmingPool("SKA", 44000, 1000, 10, 3000, 2000);
+        assertEquals("name,capacity,currentAttendance,numberOfBathrooms,volume,maxNumberOfVisitors", stadiium.getHeaders());
+    }
+
+    @Test
+    public void testToCsv() {
+        SwimmingPool stadiium = new SwimmingPool("SKA", 44000, 1000, 10, 3000, 2000);
+        assertEquals("SKA,44000,1000,10,3000.0,2000", stadiium.toCSV());
+    }
 }

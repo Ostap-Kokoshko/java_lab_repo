@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab3.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class SwimmingPool extends AbstractStadium {
+    private final static String HEADERS = ",numberOfBathrooms,volume,maxNumberOfVisitors";
     private int numberOfBathrooms;
     private double volume;
     private int maxNumberOfVisitors;
@@ -29,5 +30,15 @@ public class SwimmingPool extends AbstractStadium {
     @Override
     public final List<String> getSupportedSports() {
         return List.of("Swimming", "Water Polo");
+    }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + numberOfBathrooms + "," + volume + "," + maxNumberOfVisitors;
     }
 }

@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab3.model;
 
 import static org.junit.Assert.assertEquals;
 
@@ -24,5 +24,17 @@ public class SkatingRinkTest {
     @Test
     public void testAreaInSquareMeters(){
         assertEquals(500, stadium.getAreaInSquareMeters());
+    }
+
+    @Test
+    public void testHeaders() {
+        SkatingRink stadiium = new SkatingRink("Ternopil", 10000, 5000, true, 400);
+        assertEquals("name,capacity,currentAttendance,hasNaturalIce,areaInSquareMeters", stadiium.getHeaders());
+    }
+
+    @Test
+    public void testToCsv() {
+        SkatingRink stadiium = new SkatingRink("Ternopil", 10000, 5000, true, 400);
+        assertEquals("Ternopil,10000,5000,true,400", stadiium.toCSV());
     }
 }

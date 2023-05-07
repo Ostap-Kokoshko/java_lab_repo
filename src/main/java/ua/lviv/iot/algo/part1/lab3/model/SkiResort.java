@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab3.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class SkiResort extends AbstractStadium {
+    private final static String HEADERS = ",descentLength,slopeSteepnessInDegrees";
     private double descentLength;
     private int slopeSteepnessInDegrees;
 
@@ -26,5 +27,15 @@ public class SkiResort extends AbstractStadium {
     @Override
     public final List<String> getSupportedSports() {
         return List.of("Ski racing", "Biathlon", "FreeStyle", "Ski dueling", "Ski jumping");
+    }
+
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + HEADERS;
+    }
+
+    @Override
+    public String toCSV() {
+        return super.toCSV() + "," + descentLength + "," + slopeSteepnessInDegrees;
     }
 }
