@@ -1,6 +1,6 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.work;
 
-import ua.lviv.iot.algo.part1.lab3.model.AbstractStadium;
+import ua.lviv.iot.work.model.AbstractStadium;
 
 import java.io.FileWriter;
 import java.io.IOException;

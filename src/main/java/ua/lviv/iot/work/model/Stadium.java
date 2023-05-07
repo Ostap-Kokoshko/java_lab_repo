@@ -1,13 +1,11 @@
-package ua.lviv.iot.algo.part1.lab3.model;
+package ua.lviv.iot.work.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
-
 @Getter
+@Setter
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Stadium extends AbstractStadium {
@@ -15,6 +13,7 @@ public class Stadium extends AbstractStadium {
     final static int PEOPLE_TO_EXPEL = 100;
     private String homeTeam;
     private String awayTeam;
+    private Integer id;
 
     public Stadium(final String name,
                    final int capacity,
