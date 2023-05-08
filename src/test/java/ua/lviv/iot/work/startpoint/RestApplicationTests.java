@@ -1,4 +1,4 @@
-package ua.lviv.iot.work;
+package ua.lviv.iot.work.startpoint;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

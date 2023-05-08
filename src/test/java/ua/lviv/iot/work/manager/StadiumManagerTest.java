@@ -1,4 +1,4 @@
-package ua.lviv.iot.work;
+package ua.lviv.iot.work.manager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;

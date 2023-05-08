@@ -1,4 +1,4 @@
-package ua.lviv.iot.work;
+package ua.lviv.iot.work.writer;
 
 import ua.lviv.iot.work.model.AbstractStadium;
 

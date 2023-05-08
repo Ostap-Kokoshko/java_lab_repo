@@ -19,7 +19,7 @@ public class StadiumService {
         return stadium;
     }
 
-    public Stadium destroyStadium(final int id) {
+    public Stadium destroyStadium(final Integer id) {
         return stadiums.remove(id);
     }
 
@@ -27,7 +27,7 @@ public class StadiumService {
         return stadiums.values();
     }
 
-    public Stadium stadiumId(final int id) {
+    public Stadium getStadiumBy(final Integer id) {
         return stadiums.get(id);
     }
 

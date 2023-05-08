@@ -1,4 +1,4 @@
-package ua.lviv.iot.work;
+package ua.lviv.iot.work.writer;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;

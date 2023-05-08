@@ -23,8 +23,8 @@ public class StadiumsController {
 
     @GetMapping(path = "/{id}")
     public Object getStadium(final @PathVariable("id") Integer stadiumId) {
-        if (stadiumService.stadiumId(stadiumId) != null) {
-            return stadiumService.stadiumId(stadiumId);
+        if (stadiumService.getStadiumBy(stadiumId) != null) {
+            return stadiumService.getStadiumBy(stadiumId);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
@@ -36,7 +36,7 @@ public class StadiumsController {
 
     @PutMapping(path = "/id")
     public Object createStadium(final @PathVariable("id") Integer stadiumId, final @RequestBody Stadium stadium) {
-        if (stadiumService.stadiumId(stadiumId) == null) {
+        if (stadiumService.getStadiumBy(stadiumId) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         stadiumService.replaceStadium(stadium, stadiumId);
