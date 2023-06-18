@@ -34,7 +34,7 @@ public class StadiumsController {
         return stadiumService.createStadium(stadium);
     }
 
-    @PutMapping(path = "/id")
+    @PutMapping(path = "/{id}")
     public Object createStadium(final @PathVariable("id") Integer stadiumId, final @RequestBody Stadium stadium) {
         if (stadiumService.getStadiumBy(stadiumId) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
