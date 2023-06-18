@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3.model;
+package ua.lviv.iot.work.model;
 
 import static org.junit.Assert.assertEquals;
 

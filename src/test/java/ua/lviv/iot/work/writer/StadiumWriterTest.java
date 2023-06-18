@@ -1,10 +1,10 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.work.writer;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import ua.lviv.iot.algo.part1.lab3.model.*;
+import ua.lviv.iot.work.model.*;
 
 import java.io.File;
 import java.io.FileWriter;

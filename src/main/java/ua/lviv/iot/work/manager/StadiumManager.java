@@ -1,12 +1,16 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.work.manager;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import lombok.Generated;
-import ua.lviv.iot.algo.part1.lab3.model.*;
 
+import lombok.Getter;
+import ua.lviv.iot.work.writer.StadiumWriter;
+import ua.lviv.iot.work.model.*;
+
+@Getter
 public class StadiumManager {
     public final List<AbstractStadium> stadiums = new LinkedList<>();
     private static final String csvFileName = "result.csv";
